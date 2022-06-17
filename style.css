@@ -1,0 +1,178 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #145DA0;
+  --alt-color: #0f3555;
+  --main-trans-duration: 0.3s;
+  --main-border-radius: 6px;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #FFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+.to-do {
+  height: 100vh;
+  padding: 0;
+}
+
+.to-do h1.title {
+  background-color: var(--main-color);
+  color: #FFF;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  margin: 0;
+}
+
+.to-do .container {
+  padding: 0 15px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.to-do .form {
+  background-color: #d4d4d4;
+  border-radius: var(--main-border-radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .to-do .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.to-do .input {
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: var(--main-border-radius);
+  flex: 1;
+  color: var(--main-color);
+  caret-color: var(--main-color);
+  border: 2px solid transparent;
+  outline: none;
+  transition: var(--main-trans-duration);
+  font-size: 17px;
+}
+
+@media (max-width: 991px) {
+  .to-do .input {
+    width: 100%;
+  }
+}
+
+.to-do .input:focus,
+.to-do .input:hover {
+  border-color: var(--main-color);
+}
+
+.to-do .button {
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px;
+  border-radius: var(--main-border-radius);
+  margin-left: 10px;
+  cursor: pointer;
+  transition: var(--main-trans-duration);
+}
+
+.to-do .button:hover {
+  background-color: var(--alt-color);
+}
+
+.to-do .tasks {
+  background-color: #d4d4d4;
+  margin-top: 20px;
+  border-radius: var(--main-border-radius);
+  padding: 20px;
+}
+
+.to-do .tasks .task {
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;  
+  word-break: break-all;
+  border: 1px solid #ccc;
+  border-radius: var(--main-border-radius);
+  transition: var(--main-trans-duration);
+}
+
+@media (max-width: 991px) {
+  .to-do .tasks .task {
+    flex-direction: column;
+  }
+}
+
+.to-do .tasks .task:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.to-do .tasks .task:hover {
+  background-color: #f7f7f7;
+}
+
+.to-do .tasks .task.done {
+  opacity: 0.5;
+}
+
+.to-do .tasks .task .span-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 991px) {
+  .to-do .tasks .task .span-container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+.to-do .tasks .task span {
+  font-weight: bold;
+  font-size: 10px;
+  color: white;
+  padding: 2px var(--main-border-radius);
+  border-radius: 4px;
+  transition: var(--main-trans-duration);
+  background-color: var(--main-color);
+  cursor: text;
+}
+
+@media (max-width: 991px) {
+  .to-do .tasks .task span {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.to-do .tasks .task span.delete {
+  cursor: pointer;
+}
+
+.to-do .tasks .task span.delete:hover {
+  background-color: #F00;
+}
